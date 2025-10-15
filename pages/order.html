@@ -1,0 +1,254 @@
+‏<!DOCTYPE html>
+‏<html lang="ar" dir="rtl">
+‏<head>
+‏  <meta charset="UTF-8" />
+‏  <title>السلة | Fragrance Your Mood</title>
+‏  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+‏  <style>
+‏    body {
+‏      font-family: Arial, sans-serif;
+‏      background-color: #000;
+‏      color: #ffd700;
+‏      margin: 0;
+‏      padding: 0;
+‏      text-align: center;
+‏    }
+‏
+‏    header, footer {
+‏      background-color: #000;
+‏      padding: 20px 0;
+‏    }
+‏
+‏    .logo {
+‏      max-width: 120px;
+‏      margin-bottom: 10px;
+‏    }
+‏
+‏    .logo-text {
+‏      font-size: 1.2em;
+‏      font-weight: bold;
+‏      margin-bottom: 10px;
+‏    }
+‏
+‏    .section-bar {
+‏      display: flex;
+‏      justify-content: center;
+‏      gap: 15px;
+‏      background-color: #222;
+‏      padding: 12px 0;
+‏    }
+‏
+‏    .section-link {
+‏      font-size: 1.2em;
+‏      font-weight: bold;
+‏      color: #ffd700;
+‏      text-decoration: none;
+‏    }
+‏
+‏    main {
+‏      padding: 30px 20px;
+‏    }
+‏
+‏    .order-box {
+‏      background-color: #c0c0c0;
+‏      border: 2px solid #ffd700;
+‏      border-radius: 10px;
+‏      padding: 25px;
+‏      max-width: 700px;
+‏      margin: 0 auto;
+‏      color: #000;
+‏      text-align: right;
+‏    }
+‏
+‏    .order-box h2 {
+‏      color: #c00;
+‏      margin-bottom: 15px;
+‏      text-align: center;
+‏    }
+‏
+‏    .order-box ul {
+‏      list-style: none;
+‏      padding: 0;
+‏    }
+‏
+‏    .order-box li {
+‏      padding: 10px;
+‏      border-bottom: 1px solid #999;
+‏      font-size: 1.1em;
+‏    }
+‏
+‏    .order-box img {
+‏      width: 80px;
+‏      border-radius: 6px;
+‏      margin-left: 10px;
+‏      vertical-align: middle;
+‏    }
+‏
+‏    .confirm-button {
+‏      margin-top: 20px;
+‏      background-color: #000;
+‏      color: #ffd700;
+‏      border: 2px solid #ffd700;
+‏      border-radius: 6px;
+‏      padding: 10px 20px;
+‏      font-size: 1em;
+‏      cursor: pointer;
+‏    }
+‏
+‏    .client-form {
+‏      margin-top: 30px;
+‏      display: none;
+‏    }
+‏
+‏    .client-form label {
+‏      font-weight: bold;
+‏      display: block;
+‏      margin-bottom: 5px;
+‏    }
+‏
+‏    .client-form input,
+‏    .client-form select {
+‏      width: 100%;
+‏      padding: 8px;
+‏      margin-bottom: 10px;
+‏      border-radius: 6px;
+‏      border: 2px solid #ffd700;
+‏      background-color: #000;
+‏      color: #fff;
+‏    }
+‏
+‏    footer a {
+‏      color: #ffd700;
+‏      text-decoration: none;
+‏      margin: 0 5px;
+‏    }
+‏
+‏    footer a:hover {
+‏      color: #ffcc00;
+‏    }
+‏  </style>
+‏</head>
+‏<body>
+‏
+‏<header>
+‏  <img src="../assets/images/logo.jpeg" alt="الشعار" class="logo" />
+‏  <div class="logo-text">Fragrance Your Mood<br />سلتك العاطفية</div>
+‏  <div class="section-bar">
+‏    <a href="main.html" class="section-link">الرئيسية</a>
+‏    <a href="shop.html" class="section-link">المتجر</a>
+‏    <a href="order.html" class="section-link">السلة</a>
+‏    <a href="reviews.html" class="section-link">آراء</a>
+‏    <a href="profile.html" class="section-link">صفحتي</a>
+‏  </div>
+‏</header>
+‏
+‏<main>
+‏  <section class="order-box">
+‏    <h2>السلة الخاصة بك</h2>
+‏    <ul id="cart-list"></ul>
+‏    <button class="confirm-button" onclick="showClientForm()">تأكيد الطلب</button>
+‏
+‏    <div class="client-form" id="client-form">
+‏      <label>اسم العميل:</label>
+‏      <input type="text" id="clientName" placeholder="اكتب اسمك" />
+‏
+‏      <label>رقم الجوال:</label>
+‏      <input type="text" id="clientPhone" placeholder="05XXXXXXXX" />
+‏
+‏      <label>طريقة الدفع:</label>
+‏      <select id="paymentMethod">
+‏        <option value="تحويل بنكي">تحويل بنكي</option>
+‏        <option value="مدى">مدى</option>
+‏        <option value="نقدًا">نقدًا</option>
+‏        <option value="أخرى">أخرى</option>
+‏      </select>
+‏
+‏      <button class="confirm-button" onclick="sendOrder()">إرسال الطلب عبر واتساب</button>
+‏    </div>
+‏  </section>
+‏</main>
+‏
+‏<footer>
+‏  <div>© Fragrance Your Mood 2025. جميع الحقوق محفوظة.</div>
+‏  <div>
+‏    <a href="story.html">قصتنا</a> |
+‏    <a href="privacy-policy.html">سياسة الخصوصية</a> |
+‏    <a href="contact.html">تواصل معنا</a>
+‏  </div>
+‏</footer>
+‏
+‏<script>
+‏  const cartList = document.getElementById("cart-list");
+‏  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+‏
+‏  function renderCart() {
+‏    cartList.innerHTML = "";
+‏
+‏    if (cart.length === 0) {
+‏      cartList.innerHTML = "<li>السلة فارغة.</li>";
+‏      return;
+‏    }
+‏
+‏    cart.forEach((item, index) => {
+‏      if (!item.name || !item.description || !item.image) return;
+‏
+‏      const li = document.createElement("li");
+‏      li.innerHTML = `
+‏        <img src="${item.image}" alt="${item.name}" />
+‏        <strong>${item.name}</strong><br />
+‏        <span>${item.description}</span><br />
+‏        <button onclick="removeItem(${index})" style="margin-top:8px; background:#c00; color:#fff; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">🗑️ إزالة</button>
+‏      `;
+‏      cartList.appendChild(li);
+‏    });
+‏  }
+‏
+‏  function removeItem(index) {
+‏    cart.splice(index, 1);
+‏    localStorage.setItem("cart", JSON.stringify(cart));
+‏    renderCart();
+‏  }
+‏
+‏  function showClientForm() {
+‏    document.getElementById("client-form").style.display = "block";
+‏    window.scrollTo({ top: document.getElementById("client-form").offsetTop, behavior: "smooth" });
+‏  }
+‏
+‏  function sendOrder() {
+‏    const name = document.getElementById("clientName").value.trim();
+‏    const phone = document.getElementById("clientPhone").value.trim();
+‏    const payment = document.getElementById("paymentMethod").value;
+‏
+‏    if (!name || !phone) {
+‏      alert("يرجى إدخال اسمك ورقم جوالك قبل إرسال الطلب.");
+‏      return;
+‏    }
+‏
+‏    let message = `طلب جديد من Fragrance Your Mood:\n\n`;
+‏    message += `اسم العميل: ${name}\n`;
+‏    message += `رقم الجوال: ${phone}\n`;
+‏    message += `طريقة الدفع: ${payment}\n\n`;
+‏
+‏    cart.forEach(item => {
+‏      if (!item.name || !item.description) return;
+‏
+‏      message += `• ${item.name}\n${item.description}\n`;
+‏
+‏      if (item.blendRatio) {
+‏        message += `نسب الخلط: ${item.blendRatio}\n`;
+‏      }
+‏
+‏      message += "\n";
+‏    });
+‏
+‏    const encoded = encodeURIComponent(message);
+‏    const adminPhone = "966573052266";
+‏    window.open(`https://wa.me/${adminPhone}?text=${encoded}`, "_blank");
+‏  }
+‏
+‏  renderCart();
+‏</script>
+‏
+‏</body>
+‏</html>
+‏
