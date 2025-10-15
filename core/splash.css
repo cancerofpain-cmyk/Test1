@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'ZaridSerif';
+  src: url('../assets/fonts/29LTZaridSerif-Rg.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: 'ZaridSerif', Arial, sans-serif;
+  background-color: #000;
+}
+
+.splash {
+  height: 100vh;
+  background: url('../assets/icons/splash-image.jpeg') no-repeat center center;
+  background-size: 110%;
+  background-position: center;
+  position: relative;
+}
+
+.splash-content {
+  position: absolute;
+  bottom: 3cm;
+  left: 1cm;
+  right: 1cm;
+  display: flex;
+  justify-content: center;
+}
+
+.start-button {
+  padding: 22px 48px;
+  font-size: 24px;
+  color: #d4af37;
+  background-color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid #d4af37;
+}
