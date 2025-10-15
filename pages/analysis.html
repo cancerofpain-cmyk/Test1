@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>تحليل مشاعري | Fragrance Your Mood</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #ffd700;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header, footer {
+      background-color: #000;
+      padding: 20px 0;
+    }
+
+    .logo {
+      max-width: 120px;
+      margin-bottom: 10px;
+    }
+
+    .logo-text {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .section-bar {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background-color: #222;
+      padding: 12px 0;
+    }
+
+    .section-link {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 30px 20px;
+    }
+
+    .analysis-box {
+      background-color: #c0c0c0;
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      padding: 25px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #000;
+      text-align: right;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      font-size: 1.2em;
+      padding: 10px;
+      background-color: #000;
+      color: #fff;
+      border: 2px solid #ffd700;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .analyze-button {
+      background-color: #000;
+      color: #ffd700;
+      border: 2px solid #ffd700;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .result-box {
+      background-color: #c0c0c0;
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      padding: 25px;
+      max-width: 700px;
+      margin: 30px auto;
+      color: #000;
+      text-align: right;
+      display: none;
+    }
+
+    .result-box h2 {
+      color: #c00;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    footer a:hover {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="../assets/images/logo.jpeg" alt="الشعار" class="logo" />
+  <div class="logo-text">Fragrance Your Mood<br />ما تشعر به اليوم هو عطرك في غدك</div>
+  <div class="section-bar">
+    <a href="../base/main.html" class="section-link">الرئيسية</a>
+    <a href="shop.html" class="section-link">المتجر</a>
+    <a href="order.html" class="section-link">السلة</a>
+    <a href="reviews.html" class="section-link">آراء</a>
+    <a href="profile.html" class="section-link">صفحتي</a>
+  </div>
+</header>
+
+<main>
+  <section class="analysis-box">
+    <label for="emotion-text">اكتب مشاعرك هنا:</label>
+    <textarea id="emotion-text" placeholder="اكتب بحرّية..."></textarea>
+    <button class="analyze-button" onclick="analyzeEmotionWithShihab()">حلل مشاعري الآن</button>
+  </section>
+
+  <div class="result-box" id="result-box">
+    <h2>نتيجة التحليل</h2>
+    <p id="analysis-output"></p>
+  </div>
+</main>
+<footer>
+  <div>© Fragrance Your Mood 2025. جميع الحقوق محفوظة.</div>
+  <div>
+    <a href="story.html">قصتنا</a> |
+    <a href="privacy-policy.html">سياسة الخصوصية</a> |
+    <a href="contact.html">تواصل معنا</a>
+  </div>
+</footer>
+
+<script>
+  function analyzeEmotionWithShihab() {
+    const text = document.getElementById("emotion-text").value.trim();
+    if (!text) {
+      alert("يرجى كتابة مشاعرك أولاً.");
+      return;
+    }
+
+    let mood = "";
+    let group = "";
+    let perfumeOptions = [];
+
+    if (text.includes("قلق") || text.includes("توتر") || text.includes("خوف")) {
+      mood = "توتر داخلي";
+      group = "الهدوء الداخلي";
+      perfumeOptions = [
+        { name: "همس | Whisper", blendRatio: "50% خشب الصندل / 30% لافندر / 20% مسك أبيض", description: "عطر يهدّئ التوتر ويمنحك مساحة آمنة لإعادة المحاولة بثقة." },
+        { name: "سكون | Stillness", blendRatio: "60% لافندر / 25% مسك أبيض / 15% نعناع", description: "عطر يحتويك بلطف ويمنحك طمأنينة وسط الضجيج." },
+        { name: "حجاب | Veil", blendRatio: "40% خشب الأرز / 40% مسك أبيض / 20% مريمية", description: "عطر يحميك من الداخل ويمنحك عزلة عاطفية مريحة." }
+      ];
+    } else if (text.includes("فرح") || text.includes("سعادة") || text.includes("نشوة")) {
+      mood = "طاقة مرتفعة";
+      group = "الطاقة والتحفيز";
+      perfumeOptions = [
+        { name: "شرارة | Spark", blendRatio: "50% برغموت / 30% زنجبيل / 20% نعناع", description: "عطر يشعل الحماس ويمنحك دفعة من الحيوية." },
+        { name: "نهوض | Rise", blendRatio: "60% نعناع / 25% برغموت / 15% فلفل وردي", description: "عطر يرفعك من الداخل ويمنحك انطلاقة جديدة." },
+        { name: "نبض | Pulse", blendRatio: "40% زنجبيل / 40% برغموت / 20% ياسمين", description: "عطر ينبض بالحياة ويعكس طاقتك المتجددة." }
+      ];
+    } else {
+      mood = "حنين ودفء";
+      group = "الحنين والدفء";
+      perfumeOptions = [
+        { name: "أثر | Trace", blendRatio: "50% فانيليا / 30% ورد دمشقي / 20% عنبر", description: "عطر يعانق لحظات الحنين ويعيدك إلى أجمل الذكريات." },
+        { name: "ذاكرة | Memory", blendRatio: "60% ورد / 25% فانيليا / 15% عنبر", description: "عطر يوقظ الذكريات ويمنحك دفء داخلي." },
+        { name: "احتواء | Embrace", blendRatio: "40% عنبر / 40% فانيليا / 20% ورد", description: "عطر يحتويك بلطف ويمنحك شعورًا بالأمان." }
+      ];
+    }
+
+    const selected = perfumeOptions[Math.floor(Math.random() * perfumeOptions.length)];
+
+    const product = {
+      name: selected.name,
+      description: selected.description,
+      image: "../assets/images/custom.jpg",
+      blendRatio: selected.blendRatio // لا تُعرض للعميل
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    document.getElementById("result-box").style.display = "block";
+    document.getElementById("analysis-output").innerHTML = `
+      تم تحليل مشاعرك: <strong>${mood}</strong><br />
+      المجموعة المناسبة: <strong>${group}</strong><br />
+      تم اقتراح العطر: <strong>${selected.name}</strong><br />
+      <span>${selected.description}</span><br />
+      <a href="order.html" style="color:#c00;">عرض السلة</a>
+    `;
+  }
+</script>
+
+</body>
+</html>
