@@ -1,0 +1,203 @@
+‏<!DOCTYPE html>
+‏<html lang="ar" dir="rtl">
+‏<head>
+‏  <meta charset="UTF-8" />
+‏  <title>صفحتي | Fragrance Your Mood</title>
+‏  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+‏  <style>
+‏    body {
+‏      font-family: Arial, sans-serif;
+‏      background-color: #000;
+‏      color: #ffd700;
+‏      margin: 0;
+‏      padding: 0;
+‏      text-align: center;
+‏    }
+‏
+‏    header {
+‏      background-color: #000;
+‏      padding: 20px 0 0;
+‏    }
+‏
+‏    .logo {
+‏      max-width: 120px;
+‏      display: block;
+‏      margin: 0 auto 10px;
+‏    }
+‏
+‏    .logo-text {
+‏      font-size: 1.2em;
+‏      font-weight: bold;
+‏      margin-bottom: 10px;
+‏    }
+‏
+‏    .section-bar {
+‏      display: flex;
+‏      justify-content: center;
+‏      gap: 15px;
+‏      padding: 12px 0;
+‏      background-color: #222;
+‏    }
+‏
+‏    .section-link {
+‏      font-size: 1.2em;
+‏      font-weight: bold;
+‏      color: #ffd700;
+‏      text-decoration: none;
+‏    }
+‏
+‏    main {
+‏      padding: 30px 20px;
+‏    }
+‏
+‏    .share-section {
+‏      background-color: #111;
+‏      color: #ffd700;
+‏      padding: 20px;
+‏      border-bottom: 2px solid #ffd700;
+‏      margin-bottom: 30px;
+‏    }
+‏
+‏    .share-message {
+‏      font-size: 1.2em;
+‏      margin-bottom: 15px;
+‏    }
+‏
+‏    .share-buttons {
+‏      display: flex;
+‏      justify-content: center;
+‏      gap: 15px;
+‏    }
+‏
+‏    .share-button {
+‏      background-color: #000;
+‏      color: #ffd700;
+‏      border: 2px solid #ffd700;
+‏      padding: 10px 18px;
+‏      font-size: 1em;
+‏      border-radius: 8px;
+‏      cursor: pointer;
+‏    }
+‏
+‏    .profile-box {
+‏      background-color: #c0c0c0;
+‏      border: 2px solid #ffd700;
+‏      border-radius: 10px;
+‏      padding: 25px;
+‏      max-width: 600px;
+‏      margin: 0 auto;
+‏      color: #000;
+‏      text-align: left;
+‏    }
+‏
+‏    .profile-box h2 {
+‏      color: #c00;
+‏      margin-bottom: 15px;
+‏      text-align: center;
+‏    }
+‏
+‏    .profile-item {
+‏      margin-bottom: 12px;
+‏      font-size: 1.1em;
+‏    }
+‏
+‏    .reanalyze-button {
+‏      background-color: #000;
+‏      color: #ffd700;
+‏      padding: 10px 20px;
+‏      border: 2px solid #ffd700;
+‏      border-radius: 8px;
+‏      font-size: 1em;
+‏      margin-top: 20px;
+‏      cursor: pointer;
+‏      display: block;
+‏      margin-left: auto;
+‏      margin-right: auto;
+‏    }
+‏
+‏    footer {
+‏      background-color: #000;
+‏      color: #ffd700;
+‏      padding: 15px;
+‏      font-size: 0.9em;
+‏    }
+‏
+‏    footer a {
+‏      color: #ffd700;
+‏      text-decoration: none;
+‏      margin: 0 5px;
+‏    }
+‏
+‏    footer a:hover {
+‏      color: #ffcc00;
+‏    }
+‏  </style>
+‏</head>
+‏<body>
+‏
+‏<header>
+‏  <img src="../assets/images/logo.jpeg" alt="الشعار" class="logo" />
+‏  <div class="logo-text">Fragrance Your Mood<br />انعكاس حالتك في عطرك</div>
+‏  <div class="section-bar">
+‏    <a href="../base/main.html" class="section-link">الرئيسية</a>
+‏    <a href="shop.html" class="section-link">المتجر</a>
+‏    <a href="cart.html" class="section-link">السلة</a>
+‏    <a href="reviews.html" class="section-link">آراء</a>
+‏    <a href="profile.html" class="section-link">صفحتي</a>
+‏  </div>
+‏</header>
+‏
+‏<main>
+‏  <section class="share-section">
+‏    <p class="share-message">إن أعجبك تكلم عنا، وإن لم يعجبك تكلم معنا</p>
+‏    <div class="share-buttons">
+‏      <button class="share-button" onclick="shareWhatsApp()">مشاركة على واتساب</button>
+‏      <button class="share-button" onclick="window.location.href='contact.html'">تواصل معنا</button>
+‏    </div>
+‏  </section>
+‏
+‏  <section class="profile-box">
+‏    <h2>صفحتي الشخصية</h2>
+‏
+‏    <div class="profile-item">💬 مشاعري: <span id="emotion">—</span></div>
+‏    <div class="profile-item">🕰️ حالتي: <span id="state">—</span></div>
+‏    <div class="profile-item">⚡ التأثير المطلوب: <span id="effect">—</span></div>
+‏    <div class="profile-item">🔑 الكلمة المفتاحية: <span id="keyword">—</span></div>
+‏    <div class="profile-item">🧪 الخلطة المختارة: <span id="blend">—</span></div>
+‏    <div class="profile-item">🏷️ اسم العطر: <span id="name">—</span></div>
+‏    <div class="profile-item">🧠 تحليل الحالة: <span id="analysis">—</span></div>
+‏
+‏    <button class="reanalyze-button" onclick="window.location.href='analysis.html'">إعادة التحليل</button>
+‏  </section>
+‏</main>
+‏
+‏<footer>
+‏  <div>© Fragrance Your Mood. All rights reserved.</div>
+‏  <div>
+‏    <a href="story.html">قصتنا</a> |
+‏    <a href="privacy-policy.html">سياسة الخصوصية</a> |
+‏    <a href="contact.html">تواصل معنا</a>
+‏  </div>
+‏</footer>
+‏
+‏<script>
+‏  function shareWhatsApp() {
+‏  const url = "https://shadei-shaeir.github.io/Fragrance-Your-Mood/base/main.html";
+‏  const message = `استمتع بتجربة فريدة على Fragrance Your Mood:\n${url}`;
+‏  const encoded = encodeURIComponent(message);
+‏  window.open(`https://wa.me/?text=${encoded}`, "_blank");
+‏}
+‏
+‏  window.onload = function () {
+‏    document.getElementById("emotion").textContent = localStorage.getItem("emotion") || "—";
+‏    document.getElementById("state").textContent = localStorage.getItem("state") || "—";
+‏    document.getElementById("effect").textContent = localStorage.getItem("effect") || "—";
+‏    document.getElementById("keyword").textContent = localStorage.getItem("keyword") || "—";
+‏    document.getElementById("blend").textContent = localStorage.getItem("blend") || "—";
+‏    document.getElementById("name").textContent = localStorage.getItem("name") || "—";
+‏    document.getElementById("analysis").textContent = localStorage.getItem("analysis") || "—";
+‏  };
+‏</script>
+‏</body>
+‏</html>
+‏
